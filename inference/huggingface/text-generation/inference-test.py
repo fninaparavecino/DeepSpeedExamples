@@ -71,6 +71,10 @@ if args.batch_size > len(input_sentences):
     input_sentences *= math.ceil(args.batch_size / len(input_sentences))
 
 inputs = input_sentences[:args.batch_size]
+# print("SAIL >>> inputs length: ", len[inputs])
+# print("SAIL >>> input[0] length: ", len[inputs[0]])
+print("SAIL >>> args.max_new_tokens: ", args.max_new_tokens)
+
 
 iters = 30 if args.test_performance else 2 #warmup
 times = []
