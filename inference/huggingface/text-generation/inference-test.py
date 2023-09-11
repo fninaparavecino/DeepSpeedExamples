@@ -66,10 +66,12 @@ input_sentences = [
          "Peace is the only way"
 ]
 
+print("DEBUG>>> args.batch_size: ", args.batch_size)
+print("DEBUG>>> len(input_sentences): ", len(input_sentences))
 if args.batch_size > len(input_sentences):
     # dynamically extend to support larger bs by repetition
     input_sentences *= math.ceil(args.batch_size / len(input_sentences))
-
+print("DEBUG>>> updated len(input_sentences): ", len(input_sentences))
 inputs = input_sentences[:args.batch_size]
 # print("SAIL >>> inputs length: ", len[inputs])
 # print("SAIL >>> input[0] length: ", len[inputs[0]])
