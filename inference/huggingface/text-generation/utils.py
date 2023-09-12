@@ -44,6 +44,7 @@ class DSPipeline():
         if (is_meta):
             '''When meta tensors enabled, use checkpoints'''
             self.config = AutoConfig.from_pretrained(self.model_name)
+            print("SAIL >>>> ", self.config)
             self.repo_root, self.checkpoints_json = self._generate_json(checkpoint_path)
 
             with deepspeed.OnDevice(dtype=torch.float16, device="meta"):
